@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tax',
@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tax.component.css']
 })
 export class TaxComponent implements OnInit {
+  
+  // input tax amount information from parent: HomeComponent
+  @Input() taxInfo: any;
+
+  public schedules = [
+    "Monthly",
+    "Quaterly",
+    "Annually",
+  ];
 
   constructor() { }
 

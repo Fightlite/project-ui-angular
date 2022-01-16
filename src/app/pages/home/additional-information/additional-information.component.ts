@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdditionalInformationComponent implements OnInit {
 
+  public notes: string = 'Additional Information';
+
   constructor() { }
 
   ngOnInit(): void {

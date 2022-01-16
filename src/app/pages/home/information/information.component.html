@@ -10,10 +10,13 @@
                 <div class="row mb-2">
                     <label class="col-md-4 text-md-right label">TYPE</label>
                     <select class="col-md-8 text-input">
-                        <option>Property Tax</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                        <option 
+                            *ngFor="let property of propertyTax"
+                            [value]="property"
+                            [selected]="property == generalInformation.type.toString() ? true : null"
+                        >
+                            {{property}}
+                        </option>
                     </select>
                 </div>
             </div>
@@ -23,7 +26,7 @@
                     <div class="col-md-7 text-input">
                         <div class="d-flex money-input">
                             <span>$</span>
-                            <input id="assessed-value" type="text" class="assess-value" placeholder="350,000.00">
+                            <input id="assessed-value" type="text" class="assess-value" placeholder="{{generalInformation.value}}">
                         </div>
                     </div>
                 </div>
@@ -31,7 +34,7 @@
             <div class="col-md-6">
                 <div class="row mb-2">
                     <label for="account" class="col-md-4 text-md-right label">ACCOUNT #</label>
-                    <input id="account" type="text" class="col-md-8 text-input" >
+                    <input id="account" type="text" class="col-md-8 text-input" placeholder="{{generalInformation.account}}">
                 </div>
             </div>
             <div class="col-md-6 d-md-block d-sm-none">
@@ -41,17 +44,20 @@
             <div class="col-md-6">
                 <div class="row mb-2">
                     <label for="parcel-id" class="col-md-4 text-md-right label">PARCEL ID #</label>
-                    <input id="parcel-id" type="text" class="col-md-8 text-input">
+                    <input id="parcel-id" type="text" class="col-md-8 text-input" placeholder="{{generalInformation.parcelId}}">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="row mb-2 mr-md-2">
                     <label class="col-md-4 col-4 text-md-right label">COPY FROM</label>
                     <select class="col-md-8 col-7 text-input">
-                        <option></option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
+                        <option 
+                            *ngFor="let copy of copyFrom"
+                            [value]="copy"
+                            [selected]="copy == generalInformation.copyFrom.toString() ? true : null"
+                        >
+                            {{copy}}
+                        </option>
                     </select>
                 </div>
             </div>
@@ -60,25 +66,25 @@
                     <div class="col-md-6 col-3 mb-2">
                         <div class="row">
                             <label for="map" class="col-md-8 text-md-right label">MAP</label>
-                            <input id="map" type="text" class="col-md-4 text-input">
+                            <input id="map" type="text" class="col-md-4 text-input" placeholder="{{generalInformation.map}}">
                         </div>
                     </div>
                     <div class="col-md-6 col-3 mb-2">
                         <div class="row">
                             <label for="ward" class="col-md-8 text-md-right label">WARD</label>
-                            <input id="ward" type="text" class="col-md-4 text-input">
+                            <input id="ward" type="text" class="col-md-4 text-input" placeholder="{{generalInformation.ward}}">
                         </div>
                     </div>
                     <div class="col-md-6 col-3 mb-2">
                         <div class="row">
                             <label for="lot" class="col-md-8 text-md-right label">LOT</label>
-                            <input id="lot" type="text" class="col-md-4 text-input">
+                            <input id="lot" type="text" class="col-md-4 text-input" placeholder="{{generalInformation.lot}}">
                         </div>
                     </div>
                     <div class="col-md-6 col-3 mb-2">
                         <div class="row">
                             <label for="block" class="col-md-8 text-md-right label">BLOCK</label>
-                            <input id="block" type="text" class="col-md-4 text-input">
+                            <input id="block" type="text" class="col-md-4 text-input" placeholder="{{generalInformation.block}}">
                         </div>
                     </div>
                 </div>
