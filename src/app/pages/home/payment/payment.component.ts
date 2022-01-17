@@ -12,4 +12,15 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  paymentInfo: any = {
+    nextdue: "",
+    amount: 0,
+    paidby: "",
+    payifdue: false,
+  };
+
+  receiveData($event: any) {
+    this.paymentInfo = $event;
+  }
+
 }
